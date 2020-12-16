@@ -30,7 +30,7 @@ module.exports = {
                 text: '工具使用',
                 items: [
                     {
-                        text: 'Yarn',
+                        text: '开发工具使用记录',
                         link: '/tool/'
                     }
                 ]
@@ -47,7 +47,7 @@ module.exports = {
             ],
             '/tool/': [
                 ['', 'home'],
-                ['yarn', 'yarn使用']
+                ['yarn', 'yarn']
             ]
         }
     }
