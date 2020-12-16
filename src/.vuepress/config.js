@@ -17,7 +17,7 @@ module.exports = {
         },
         // markdown-it-toc
         toc: {
-            includeLevel: [1,2]
+            includeLevel: [1, 2]
         },
         extendMarkdown: md => {
             // 使用更多的markdown-it 插件！
@@ -25,17 +25,30 @@ module.exports = {
         }
     },
     themeConfig: {
-      nav: [
-       {
-           text: '随记',
-           link: '/random/'
-       }
-      ],
-      sidebar: {
-       '/random/': [
-           ['', 'home'],
-           ['reduce', 'reduce使用']
-       ]
-    }
+        nav: [
+            {
+                text: '工具使用',
+                items: [
+                    {
+                        text: 'Yarn',
+                        link: '/tool/'
+                    }
+                ]
+            },
+            {
+                text: '随记',
+                link: '/random/'
+            }
+        ],
+        sidebar: {
+            '/random/': [
+                ['', 'home'],
+                ['reduce', 'reduce使用']
+            ],
+            '/tool/': [
+                ['', 'home'],
+                ['yarn', 'yarn使用']
+            ]
+        }
     }
 }
