@@ -38,6 +38,23 @@ module.exports = {
             {
                 text: '随记',
                 link: '/random/'
+            },
+            {
+                text: 'web前端',
+                items: [
+                    {
+                        text: 'html',
+                        link: '/webfront/html/'
+                    },
+                    {
+                        text: 'css',
+                        link: '/webfront/css/'
+                    },
+                    {
+                        text: 'js',
+                        link: '/webfront/js/'
+                    },
+                ]
             }
         ],
         sidebar: {
@@ -48,7 +65,19 @@ module.exports = {
             '/tool/': [
                 ['', 'home'],
                 ['yarn', 'yarn']
-            ]
+            ],
+            '/webfront/html/': [
+                ['', 'home']
+            ],
+            '/webfront/css/': [
+                ['', 'home'],
+                ['less', 'less使用'],
+                ['scss', 'scss使用'],
+                ['knowledgepoint', '常见知识点']
+            ],
+            '/webfront/js/': [
+                ['', 'home']
+            ],
         }
     }
 }
