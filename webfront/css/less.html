@@ -1,0 +1,120 @@
+  
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>什么是CSS预处理器？ | Hello notes</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    
+    <meta name="description" content="Just playing aroung">
+    
+    <link rel="preload" href="/notes/assets/css/0.styles.9218c62b.css" as="style"><link rel="preload" href="/notes/assets/js/app.c952349a.js" as="script"><link rel="preload" href="/notes/assets/js/2.6b35c4e9.js" as="script"><link rel="preload" href="/notes/assets/js/14.b02f7462.js" as="script"><link rel="prefetch" href="/notes/assets/js/10.49072f45.js"><link rel="prefetch" href="/notes/assets/js/11.f7d7c320.js"><link rel="prefetch" href="/notes/assets/js/12.0b8b19e0.js"><link rel="prefetch" href="/notes/assets/js/13.0e8d8026.js"><link rel="prefetch" href="/notes/assets/js/15.a08abfee.js"><link rel="prefetch" href="/notes/assets/js/16.e6e5a107.js"><link rel="prefetch" href="/notes/assets/js/17.dec74533.js"><link rel="prefetch" href="/notes/assets/js/3.ae0f4bc7.js"><link rel="prefetch" href="/notes/assets/js/4.6b822768.js"><link rel="prefetch" href="/notes/assets/js/5.375accf1.js"><link rel="prefetch" href="/notes/assets/js/6.b82ff97c.js"><link rel="prefetch" href="/notes/assets/js/7.903ef7b9.js"><link rel="prefetch" href="/notes/assets/js/8.8314c44c.js"><link rel="prefetch" href="/notes/assets/js/9.8037f8aa.js">
+    <link rel="stylesheet" href="/notes/assets/css/0.styles.9218c62b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notes/" class="home-link router-link-active"><!----> <span class="site-name">Hello notes</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具使用" class="dropdown-title"><span class="title">工具使用</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具使用" class="mobile-dropdown-title"><span class="title">工具使用</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/tool/" class="nav-link">
+  开发工具使用记录
+</a></li></ul></div></div><div class="nav-item"><a href="/notes/random/" class="nav-link">
+  随记
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="web前端" class="dropdown-title"><span class="title">web前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="web前端" class="mobile-dropdown-title"><span class="title">web前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/webfront/html/" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/notes/webfront/css/" class="nav-link router-link-active">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/notes/webfront/js/" class="nav-link">
+  js
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具使用" class="dropdown-title"><span class="title">工具使用</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具使用" class="mobile-dropdown-title"><span class="title">工具使用</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/tool/" class="nav-link">
+  开发工具使用记录
+</a></li></ul></div></div><div class="nav-item"><a href="/notes/random/" class="nav-link">
+  随记
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="web前端" class="dropdown-title"><span class="title">web前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="web前端" class="mobile-dropdown-title"><span class="title">web前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/notes/webfront/html/" class="nav-link">
+  html
+</a></li><li class="dropdown-item"><!----> <a href="/notes/webfront/css/" class="nav-link router-link-active">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/notes/webfront/js/" class="nav-link">
+  js
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/notes/webfront/css/" aria-current="page" class="sidebar-link">home</a></li><li><a href="/notes/webfront/css/less.html" aria-current="page" class="active sidebar-link">less使用</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/notes/webfront/css/scss.html" class="sidebar-link">scss使用</a></li><li><a href="/notes/webfront/css/knowledgepoint.html" class="sidebar-link">常见知识点</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="什么是css预处理器">什么是CSS预处理器？</h3> <p>CSS预处理器是用一门专门的语言，进行网页的样式设计，之后再被编译为正常的CSS文件，以供项目使用</p> <p>Less是一个CSS预处理语言，扩展了CSS语言，增加了变量，mixin，函数等特性，使CSS更容易维护和扩展</p> <h4 id="变量-variables">变量（Variables）</h4> <div class="language-less extra-class"><pre class="language-less"><code><span class="token variable">@width<span class="token punctuation">:</span></span> 10px<span class="token punctuation">;</span>
+<span class="token variable">@height<span class="token punctuation">:</span></span> <span class="token variable">@width</span> <span class="token operator">+</span> 10px<span class="token punctuation">;</span>
+
+<span class="token selector">#header</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token variable">@width</span><span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token variable">@height</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="混合-mixins">混合（Mixins）</h4> <div class="language-less extra-class"><pre class="language-less"><code>
+<span class="token selector">.bordered</span> <span class="token punctuation">{</span>
+  <span class="token property">border-top</span><span class="token punctuation">:</span> dotted 1px black<span class="token punctuation">;</span>
+  <span class="token property">border-bottom</span><span class="token punctuation">:</span> solid 2px black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">#menu a</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #111<span class="token punctuation">;</span>
+  <span class="token mixin-usage function">.bordered</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.post a</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token mixin-usage function">.bordered</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="嵌套-nesting">嵌套（Nesting）</h4> <div class="language-less extra-class"><pre class="language-less"><code><span class="token selector">#header</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token selector">.navigation</span> <span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.logo</span> <span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="运算-operations">运算（Operations）</h4> <div class="language-less extra-class"><pre class="language-less"><code> <span class="token comment">/* numbers are converted into the same units */</span>
+<span class="token variable">@conversion-1<span class="token punctuation">:</span></span> 5cm <span class="token operator">+</span> 10mm<span class="token punctuation">;</span> <span class="token comment">// result is 6cm</span>
+<span class="token variable">@conversion-2<span class="token punctuation">:</span></span> 2 <span class="token operator">-</span> 3cm <span class="token operator">-</span> 5mm<span class="token punctuation">;</span> <span class="token comment">// result is -1.5cm</span>
+
+<span class="token comment">/* conversion is impossible */</span>
+<span class="token variable">@incompatible-units<span class="token punctuation">:</span></span> 2 <span class="token operator">+</span> 5px <span class="token operator">-</span> 3cm<span class="token punctuation">;</span> <span class="token comment">// result is 4px</span>
+
+ <span class="token comment">/* example with variables */</span>
+<span class="token variable">@base<span class="token punctuation">:</span></span> 5%<span class="token punctuation">;</span>
+<span class="token variable">@filler<span class="token punctuation">:</span></span> <span class="token variable">@base</span> <span class="token operator">*</span> 2<span class="token punctuation">;</span> <span class="token comment">// result is 10%</span>
+<span class="token variable">@other<span class="token punctuation">:</span></span> <span class="token variable">@base</span> <span class="token operator">+</span> <span class="token variable">@filler</span><span class="token punctuation">;</span> <span class="token comment">// result is 15%</span>
+</code></pre></div><h4 id="函数-functions">函数（Functions）</h4> <div class="language-less extra-class"><pre class="language-less"><code><span class="token comment">/* Less 内置了多种函数用于转换颜色、处理字符串、算术运算等。这些函数在函数手册中有详细介绍。
+函数的用法非常简单。下面这个例子将介绍如何利用 percentage 函数将 0.5 转换为 50%，将颜色饱和度增加 5%，以及颜色亮度降低 25% 并且色相值增加 8 等用法： */</span>
+<span class="token variable">@base<span class="token punctuation">:</span></span> #f04615<span class="token punctuation">;</span>
+<span class="token variable">@width<span class="token punctuation">:</span></span> 0.5<span class="token punctuation">;</span>
+
+<span class="token selector">.class</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token function">percentage</span><span class="token punctuation">(</span><span class="token variable">@width</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// returns `50%`</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">saturate</span><span class="token punctuation">(</span><span class="token variable">@base</span><span class="token punctuation">,</span> 5%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">spin</span><span class="token punctuation">(</span><span class="token function">lighten</span><span class="token punctuation">(</span><span class="token variable">@base</span><span class="token punctuation">,</span> 25%<span class="token punctuation">)</span><span class="token punctuation">,</span> 8<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token selector">#bundle()</span> <span class="token punctuation">{</span>
+  <span class="token selector">.button</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 1px solid black<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> grey<span class="token punctuation">;</span>
+    <span class="token selector">&amp;:hover</span> <span class="token punctuation">{</span>
+      <span class="token property">background-color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.tab</span> <span class="token punctuation">{</span> ... <span class="token punctuation">}</span>
+  <span class="token selector">.citation</span> <span class="token punctuation">{</span> ... <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">#header a</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> orange<span class="token punctuation">;</span>
+  <span class="token mixin-usage function">#bundle.button</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// can also be written as #bundle &gt; .button</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="导入-importing">导入（Importing）</h4> <p>“导入”的工作方式和你预期的一样。你可以导入一个 .less 文件，此文件中的所有变量就可以全部使用了。如果导入的文件是 .less 扩展名，则可以将扩展名省略掉：</p> <div class="language-less extra-class"><pre class="language-less"><code><span class="token variable">@import</span> <span class="token string">&quot;library&quot;</span><span class="token punctuation">;</span> <span class="token comment">// library.less</span>
+<span class="token variable">@import</span> <span class="token string">&quot;typo.css&quot;</span><span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notes/webfront/css/" class="prev router-link-active">
+        home
+      </a></span> <span class="next"><a href="/notes/webfront/css/scss.html">
+        scss使用
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/notes/assets/js/app.c952349a.js" defer></script><script src="/notes/assets/js/2.6b35c4e9.js" defer></script><script src="/notes/assets/js/14.b02f7462.js" defer></script>
+  </body>
+</html>
