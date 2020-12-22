@@ -55,6 +55,15 @@ module.exports = {
                         link: '/webfront/js/'
                     },
                 ]
+            },
+            {
+                text: '框架学习',
+                items: [
+                    {
+                        text: 'vue',
+                        link: '/framework/vue/'
+                    }
+                ]
             }
         ],
         sidebar: {
@@ -78,6 +87,10 @@ module.exports = {
             '/webfront/js/': [
                 ['', 'home']
             ],
+            '/framework/vue/': [
+                ['', 'home'],
+                ['vue3', 'vue3知识点']
+            ]
         }
     }
 }
