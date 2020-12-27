@@ -1,7 +1,8 @@
 module.exports = {
     title: 'Hello notes',
     description: 'Just playing aroung',
-    base: '/notes/',
+    base: '',
+    // base: '/notes/',
     search: false, // 禁用默认的搜索框
     configureWebpack: {
         resolve: {
