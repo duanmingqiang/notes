@@ -26,6 +26,8 @@ module.exports = {
         }
     },
     themeConfig: {
+        lastUpdated: true,
+        // 导航
         nav: [
             {
                 text: '工具使用',
@@ -67,6 +69,7 @@ module.exports = {
                 ]
             }
         ],
+        // 侧边栏
         sidebar: {
             '/random/': [
                 ['', 'home'],
@@ -74,7 +77,8 @@ module.exports = {
             ],
             '/tool/': [
                 ['', 'home'],
-                ['yarn', 'yarn']
+                ['yarn', 'yarn'],
+                ['browser', '浏览器小技巧']
             ],
             '/webfront/html/': [
                 ['', 'home']
