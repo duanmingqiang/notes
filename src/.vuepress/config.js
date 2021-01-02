@@ -78,7 +78,8 @@ module.exports = {
             '/tool/': [
                 ['', 'home'],
                 ['yarn', 'yarn'],
-                ['browser', '浏览器小技巧']
+                ['browser', '浏览器小技巧'],
+                ['axios', 'axios简单使用']
             ],
             '/webfront/html/': [
                 ['', 'home']
