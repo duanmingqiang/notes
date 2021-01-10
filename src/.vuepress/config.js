@@ -73,7 +73,8 @@ module.exports = {
         sidebar: {
             '/random/': [
                 ['', 'home'],
-                ['reduce', 'reduce使用']
+                ['reduce', 'reduce使用'],
+                ['summaryfor2020', '2020年总结']
             ],
             '/tool/': [
                 ['', 'home'],
