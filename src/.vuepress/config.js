@@ -74,7 +74,8 @@ module.exports = {
             '/random/': [
                 ['', 'home'],
                 ['reduce', 'reduce使用'],
-                ['summaryfor2020', '2020年总结']
+                ['summaryfor2020', '2020年总结'],
+                ['ssh-key', 'ssh秘钥']
             ],
             '/tool/': [
                 ['', 'home'],
