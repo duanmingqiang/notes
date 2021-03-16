@@ -93,7 +93,8 @@ module.exports = {
                 ['knowledgepoint', '常见知识点']
             ],
             '/webfront/js/': [
-                ['', 'home']
+                ['', 'home'],
+                ['handwrite', '手写JS'],
             ],
             '/framework/vue/': [
                 ['', 'home'],
