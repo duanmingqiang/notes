@@ -43,3 +43,20 @@ Function.prototype.bind = function (context, ...args) {
     }
 }
 ```
+
+#### new，用于创建对象
+``` js
+function mynew(fn, ...args) {
+    // 指明函数是否通过new操作符使用
+    mynew.target = fn
+    // 创建空对象，并设置proto为构造函数的原型
+    let obj = Object.create(fn.prototype)
+    // 使用obj作为函数的上下文环境并调用函数
+    const res = fn.call(obj, ...args)
+    // 函数返回值为对象，则返回该对象，否则返回新创建的对象
+    if (res &&  (typeof res === 'object' || typeof res === 'function')) {
+        return res
+    }
+    return obj
+}
+```
