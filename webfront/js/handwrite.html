@@ -9,7 +9,7 @@
     
     <meta name="description" content="Just playing aroung">
     
-    <link rel="preload" href="/assets/css/0.styles.992cb7aa.css" as="style"><link rel="preload" href="/assets/js/app.ae29c134.js" as="script"><link rel="preload" href="/assets/js/2.4802af22.js" as="script"><link rel="preload" href="/assets/js/24.3ffb6ef1.js" as="script"><link rel="prefetch" href="/assets/js/10.bf31b5f8.js"><link rel="prefetch" href="/assets/js/11.c9cbddb8.js"><link rel="prefetch" href="/assets/js/12.3d7b9146.js"><link rel="prefetch" href="/assets/js/13.16241736.js"><link rel="prefetch" href="/assets/js/14.4112edf3.js"><link rel="prefetch" href="/assets/js/15.71d66f1c.js"><link rel="prefetch" href="/assets/js/16.2caa77d6.js"><link rel="prefetch" href="/assets/js/17.e386a76d.js"><link rel="prefetch" href="/assets/js/18.3a500890.js"><link rel="prefetch" href="/assets/js/19.035eb594.js"><link rel="prefetch" href="/assets/js/20.013f0162.js"><link rel="prefetch" href="/assets/js/21.498b32e4.js"><link rel="prefetch" href="/assets/js/22.432f4d1f.js"><link rel="prefetch" href="/assets/js/23.5e900c0c.js"><link rel="prefetch" href="/assets/js/3.a66ce9a1.js"><link rel="prefetch" href="/assets/js/4.e87b9964.js"><link rel="prefetch" href="/assets/js/5.d8262776.js"><link rel="prefetch" href="/assets/js/6.642582ca.js"><link rel="prefetch" href="/assets/js/7.d6a38a9c.js"><link rel="prefetch" href="/assets/js/8.9c37d898.js"><link rel="prefetch" href="/assets/js/9.8346bd9e.js">
+    <link rel="preload" href="/assets/css/0.styles.992cb7aa.css" as="style"><link rel="preload" href="/assets/js/app.6d5a846b.js" as="script"><link rel="preload" href="/assets/js/2.4802af22.js" as="script"><link rel="preload" href="/assets/js/24.467a7e6a.js" as="script"><link rel="prefetch" href="/assets/js/10.bf31b5f8.js"><link rel="prefetch" href="/assets/js/11.c9cbddb8.js"><link rel="prefetch" href="/assets/js/12.3d7b9146.js"><link rel="prefetch" href="/assets/js/13.16241736.js"><link rel="prefetch" href="/assets/js/14.4112edf3.js"><link rel="prefetch" href="/assets/js/15.71d66f1c.js"><link rel="prefetch" href="/assets/js/16.2caa77d6.js"><link rel="prefetch" href="/assets/js/17.e386a76d.js"><link rel="prefetch" href="/assets/js/18.3a500890.js"><link rel="prefetch" href="/assets/js/19.035eb594.js"><link rel="prefetch" href="/assets/js/20.013f0162.js"><link rel="prefetch" href="/assets/js/21.498b32e4.js"><link rel="prefetch" href="/assets/js/22.432f4d1f.js"><link rel="prefetch" href="/assets/js/23.5e900c0c.js"><link rel="prefetch" href="/assets/js/3.a66ce9a1.js"><link rel="prefetch" href="/assets/js/4.e87b9964.js"><link rel="prefetch" href="/assets/js/5.d8262776.js"><link rel="prefetch" href="/assets/js/6.642582ca.js"><link rel="prefetch" href="/assets/js/7.d6a38a9c.js"><link rel="prefetch" href="/assets/js/8.9c37d898.js"><link rel="prefetch" href="/assets/js/9.8346bd9e.js">
     <link rel="stylesheet" href="/assets/css/0.styles.992cb7aa.css">
   </head>
   <body>
@@ -81,11 +81,68 @@ bind是返回一个能在特定上下文环境执行的函数</p> <h4 id="apply"
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> obj
 <span class="token punctuation">}</span>
-</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">3/17/2021, 2:27:35 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+</code></pre></div><h4 id="防抖和节流-都是防止频繁触发事件的操作">防抖和节流，都是防止频繁触发事件的操作</h4> <h4 id="防抖">防抖</h4> <p>防抖指的是在事件触发n秒后执行回调，如果在n秒内再次被触发，则重新计时</p> <h5 id="常用场景">常用场景：</h5> <p>按钮提交，防止重复提交，只提交最后一次
+搜索框联想：防止输入持续触发回调，只触发最后一次</p> <h5 id="实现方式">实现方式</h5> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 非立即执行版</span>
+<span class="token keyword">function</span> <span class="token function">debounce</span> <span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> wait</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> timeout
+    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> context <span class="token operator">=</span> <span class="token keyword">this</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>timeout<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timeout<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        timeout <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> <span class="token operator">...</span>args<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> wait<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 立即执行版</span>
+<span class="token keyword">function</span> <span class="token function">debounce</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> wait</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> timeout
+    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> context <span class="token operator">=</span> <span class="token keyword">this</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>timeout<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timeout<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">let</span> runNow <span class="token operator">=</span> <span class="token operator">!</span>timeout
+        timeout <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            timeout <span class="token operator">=</span> <span class="token keyword">null</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> wait<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>runNow<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> <span class="token operator">...</span>args<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="节流">节流</h4> <p>节流指的是在n秒内只能触发一次回调，如果在n秒内多次触发回调，只会执行一次</p> <h5 id="常用场景-2">常用场景</h5> <p>拖拽事件：n秒内只执行一次，防止频繁触发事件
+浏览器滚动或大小变化场景</p> <h5 id="实现方式-2">实现方式</h5> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 时间戳版</span>
+<span class="token keyword">function</span> <span class="token function">throttle</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> wait</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> pre <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> context <span class="token operator">=</span> <span class="token keyword">this</span>
+        <span class="token keyword">let</span> now <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>now <span class="token operator">-</span> pre <span class="token operator">&gt;=</span> wait<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> <span class="token operator">...</span>args<span class="token punctuation">)</span>
+            pre <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 定时器版</span>
+<span class="token keyword">function</span> <span class="token function">throttle</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> wait</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> timeout<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> context <span class="token operator">=</span> <span class="token keyword">this</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>timeout<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            timeout <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                timeout <span class="token operator">=</span> <span class="token keyword">null</span>
+                <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> <span class="token operator">...</span>args<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span> wait<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">3/18/2021, 3:23:57 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
       ←
       <a href="/webfront/js/" class="prev router-link-active">
         home
       </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.ae29c134.js" defer></script><script src="/assets/js/2.4802af22.js" defer></script><script src="/assets/js/24.3ffb6ef1.js" defer></script>
+    <script src="/assets/js/app.6d5a846b.js" defer></script><script src="/assets/js/2.4802af22.js" defer></script><script src="/assets/js/24.467a7e6a.js" defer></script>
   </body>
 </html>
