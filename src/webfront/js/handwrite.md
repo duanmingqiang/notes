@@ -60,3 +60,82 @@ function mynew(fn, ...args) {
     return obj
 }
 ```
+
+#### 防抖和节流，都是防止频繁触发事件的操作
+
+#### 防抖
+防抖指的是在事件触发n秒后执行回调，如果在n秒内再次被触发，则重新计时
+
+##### 常用场景：
+按钮提交，防止重复提交，只提交最后一次
+搜索框联想：防止输入持续触发回调，只触发最后一次
+
+##### 实现方式
+``` js
+// 非立即执行版
+function debounce (fn, wait) {
+    let timeout
+    return function (...args) {
+        let context = this
+        if (timeout) {
+            clearTimeout(timeout)
+        }
+        timeout = setTimeout( () => {
+            fn.call(context, ...args)
+        }, wait)
+    }
+}
+// 立即执行版
+function debounce(fn, wait) {
+    let timeout
+    return function (...args) {
+        const context = this
+        if (timeout) {
+            clearTimeout(timeout)
+        }
+        let runNow = !timeout
+        timeout = setTimeout(() => {
+            timeout = null
+        }, wait)
+        if (runNow) {
+            fn.call(context, ...args)
+        }
+    }
+}
+```
+
+#### 节流
+节流指的是在n秒内只能触发一次回调，如果在n秒内多次触发回调，只会执行一次
+
+##### 常用场景
+拖拽事件：n秒内只执行一次，防止频繁触发事件
+浏览器滚动或大小变化场景
+
+##### 实现方式
+``` js
+// 时间戳版
+function throttle(fn, wait) {
+    let pre = 0;
+    return function (...args) {
+        const context = this
+        let now = Date.now() 
+        if (now - pre >= wait) {
+            fn.call(context, ...args)
+            pre = Date.now()
+        }
+    }
+}
+// 定时器版
+function throttle(fn, wait) {
+    let timeout;
+    return function (...args) {
+        const context = this
+        if (!timeout) {
+            timeout = setTimeout(() => {
+                timeout = null
+                fn.call(context, ...args)
+            }, wait)
+        }
+    }
+}
+```
