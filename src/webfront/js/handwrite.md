@@ -139,3 +139,25 @@ function throttle(fn, wait) {
     }
 }
 ```
+
+#### 简易深拷贝
+
+``` js
+function deepClone(target) {
+    const obj = {}
+    if (typeof target !== 'object' || target === null) {
+        return target
+    }
+    if (target instanceof Array) {
+        return target.map(item => {
+            return deepClone(item)
+        })
+    }
+    if (target instanceof Object) {
+        Object.keys(target).forEach((item, index) => {
+            obj[item] = deepClone(target[item])
+        })
+    }
+    return obj
+}
+```
