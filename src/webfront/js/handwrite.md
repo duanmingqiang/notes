@@ -161,3 +161,37 @@ function deepClone(target) {
     return obj
 }
 ```
+
+#### 简易发布订阅
+``` js
+function PubSub () {
+    this.cacheCallback = {}
+}
+
+PubSub.prototype.on = function (eventType, callback) {
+    if (!this.cacheCallback[eventType]) {
+        this.cacheCallback[eventType] = []
+    }
+    this.cacheCallback[eventType].push(callback)
+}
+
+PubSub.prototype.emit = function (eventType, ...args) {
+    if (this.cacheCallback[eventType]) {
+        this.cacheCallback[eventType].forEach(item => {
+            item(...args)
+        })
+    }
+}
+
+PubSub.prototype.remove = function (eventType, fun) {
+    if (eventType && this.cacheCallback[eventType]) {
+        if (fun) {
+            this.cacheCallback[eventType] = this.cacheCallback[eventType].filter((item, index, arr) => {
+                return item !== fun
+            })
+        } else {
+            delete this.cacheCallback[eventType]
+        }
+    }
+}
+```
