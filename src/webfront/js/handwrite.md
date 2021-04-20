@@ -195,3 +195,159 @@ PubSub.prototype.remove = function (eventType, fun) {
     }
 }
 ```
+
+#### 简易Promise
+``` js
+function resolvePromise(newPromise, x, resolve, reject) {
+    if (newPromise === x) {
+        throw new TypeError('error')
+    }
+
+    if (x instanceof MyPromise) {
+        x.then(y => {
+            resolvePromise(newPromise, y, resolve, reject)
+        }, reject)
+    } else {
+        resolve(x)
+    }
+}
+
+
+function MyPromise(excutor) {
+    this.status = 'pending'
+    this.resolveValue = undefined
+    this.rejectValue = undefined
+    this.resolveCallbacks = []
+    this.rejectCallbacks = []
+    let resolve = (value) => {
+        if (this.status === 'pending') {
+            this.status = 'fulfilled'
+            this.resolveValue = value
+            this.resolveCallbacks.forEach(fn => {
+                fn()
+            })
+        }
+    }
+    let reject = (reason) => {
+        if (this.status === 'pending') {
+            this.status = 'rejected'
+            this.rejectValue = reason
+            this.rejectCallbacks.forEach(fn => {
+                fn()
+            })
+        }
+    }
+    excutor(resolve, reject)
+}
+
+MyPromise.resolve = function (value) {
+    return new MyPromise(resolve => {
+        resolve(value)
+    })
+}
+
+MyPromise.reject = function (value) {
+    return new MyPromise(resolve, reject => {
+        reject(value)
+    })
+}
+
+MyPromise.all = function (promiseArrs) {
+    let arr = []
+    if (Array.isArray(promiseArrs)) {
+        return new MyPromise(function (resolve, reject) {
+            promiseArrs.forEach((promise, index) => {
+                promise.then(res => {
+                    arr.push(res)
+                    if (arr.length === promiseArrs.length) {
+                        resolve(arr)
+                    }
+                }).catch(error => {
+                    reject(error)
+                })
+            })
+
+        })
+    } else {
+        throw new TypeError('参数异常')
+    }
+}
+
+MyPromise.race = function (promiseArrs) {
+    let arr = []
+    if (Array.isArray(promiseArrs)) {
+        return new MyPromise(function (resolve, reject) {
+            promiseArrs.forEach((promise, index) => {
+                promise.then(res => {
+                    resolve(res)
+                })
+                    .catch(error => {
+                        reject(error)
+                    })
+            })
+        })
+    } else {
+        throw new TypeError('参数异常')
+    }
+}
+
+MyPromise.prototype.catch = function (error) {
+    return this.then(null, error)
+}
+
+MyPromise.prototype.finally = function (callback) {
+    return this.then(result => {
+        return Promise.resolve(callback()).then(() => result)
+    }, resaon => {
+        return Promise.resolve(callback()).then(() => resaon)
+    })
+}
+
+MyPromise.prototype.then = function (onFulfilled, onRejected) {
+    let newPromise = new MyPromise((resolve, reject) => {
+        if (this.status === 'fulfilled') {
+            setTimeout(() => {
+                try {
+                    let x = onFulfilled(this.resolveValue)
+                    resolvePromise(newPromise, x, resolve, reject)
+                } catch (error) {
+                    reject(error)
+                }
+            }, 0)
+        }
+        if (this.status === 'rejected') {
+            setTimeout(() => {
+                try {
+                    let x = onRejected(this.rejectValue)
+                    resolvePromise(newPromise, x, resolve, reject)
+                } catch (error) {
+                    reject(error)
+                }
+            }, 0)
+        }
+        if (this.status === 'pending') {
+            this.resolveCallbacks.push(() => {
+                setTimeout(() => {
+                    try {
+                        let x = onFulfilled(this.resolveValue)
+                        resolvePromise(newPromise, x, resolve, reject)
+                    } catch (error) {
+                        reject(error)
+                    }
+                }, 0)
+            })
+            this.rejectCallbacks.push(() => {
+                setTimeout(() => {
+                    try {
+                        let x = onRejected(this.rejectValue)
+                        resolvePromise(newPromise, x, resolve, reject)
+                    } catch (error) {
+                        reject(error)
+                    }
+                }, 0)
+            })
+        }
+    })
+    return newPromise
+}
+```
