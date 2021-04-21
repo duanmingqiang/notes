@@ -247,7 +247,7 @@ MyPromise.resolve = function (value) {
 }
 
 MyPromise.reject = function (value) {
-    return new MyPromise(resolve, reject => {
+    return new MyPromise((resolve, reject) => {
         reject(value)
     })
 }
@@ -297,13 +297,15 @@ MyPromise.prototype.catch = function (error) {
 
 MyPromise.prototype.finally = function (callback) {
     return this.then(result => {
-        return Promise.resolve(callback()).then(() => result)
+        return MyPromise.resolve(callback()).then(() => result)
     }, resaon => {
-        return Promise.resolve(callback()).then(() => resaon)
+        return MyPromise.resolve(callback()).then(() => resaon)
     })
 }
 
 MyPromise.prototype.then = function (onFulfilled, onRejected) {
+    onFulfilled = typeof onFulfilled === 'function'? onFulfilled: res => res;
+    onRejected = typeof onRejected === 'function'? onRejected: err => {throw err};
     let newPromise = new MyPromise((resolve, reject) => {
         if (this.status === 'fulfilled') {
             setTimeout(() => {
