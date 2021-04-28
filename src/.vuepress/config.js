@@ -95,7 +95,8 @@ module.exports = {
             '/webfront/js/': [
                 ['', 'home'],
                 ['handwrite', '手写JS'],
-                ['algorithm', '算法']
+                ['algorithm', '算法'],
+                ['downloadfile', '文件下载']
             ],
             '/framework/vue/': [
                 ['', 'home'],
