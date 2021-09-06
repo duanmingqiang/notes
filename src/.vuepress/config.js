@@ -96,11 +96,12 @@ module.exports = {
                 ['', 'home'],
                 ['handwrite', '手写JS'],
                 ['algorithm', '算法'],
-                ['downloadfile', '文件下载']
+                ['downloadfile', '文件下载'],
+                ['screenshot', '截图']
             ],
             '/framework/vue/': [
-                ['', 'home'],
-                ['vue3', 'vue3知识点']
+                ['', 'home']
+                // ['vue3', 'vue3知识点']
             ]
         }
     }
