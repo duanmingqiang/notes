@@ -43,6 +43,10 @@ module.exports = {
                 link: '/random/'
             },
             {
+                text: '知识点',
+                link: '/interview/'
+            },
+            {
                 text: 'web前端',
                 items: [
                     {
@@ -101,6 +105,13 @@ module.exports = {
             ],
             '/framework/vue/': [
                 ['', 'home']
+                // ['vue3', 'vue3知识点']
+            ],
+            '/interview/': [
+                ['', 'home'],
+                ['3', '（转）前端知识点3'],
+                ['4', '（转）前端知识点4'],
+                ['5', '（转）前端知识点5'],
                 // ['vue3', 'vue3知识点']
             ]
         }
