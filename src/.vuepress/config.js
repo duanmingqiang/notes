@@ -101,7 +101,8 @@ module.exports = {
                 ['handwrite', '手写JS'],
                 ['algorithm', '算法'],
                 ['downloadfile', '文件下载'],
-                ['screenshot', '截图']
+                ['screenshot', '截图'],
+                ['readexcel', 'js解析excel内容']
             ],
             '/framework/vue/': [
                 ['', 'home']
@@ -112,6 +113,7 @@ module.exports = {
                 ['3', '（转）前端知识点3'],
                 ['4', '（转）前端知识点4'],
                 ['5', '（转）前端知识点5'],
+                ['selfknowledge', '前端问题汇总(己)']
                 // ['vue3', 'vue3知识点']
             ]
         }
