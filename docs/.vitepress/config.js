@@ -1,7 +1,7 @@
 module.exports = {
     title: 'Hello notes',
     description: 'Just playing aroung',
-    base: '/notes/', //
+    base: '', //
     // base: '/notes/',
     // search: false, // 禁用默认的搜索框
     lastUpdated: "上次更新时间",
