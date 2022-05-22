@@ -1,1 +1,0 @@
-import{_ as n,c as s,o as a,b as p}from"./app.28d8f8df.js";const w='{"title":"call,apply,bind","description":"","frontmatter":{},"headers":[],"relativePath":"webfront/js/handwrite.md"}',t={},o=p("",29),e=[o];function c(u,l,k,i,r,d){return a(),s("div",null,e)}var f=n(t,[["render",c]]);export{w as __pageData,f as default};

@@ -1,1 +1,0 @@
-import{_ as e,c as t,o,a}from"./app.28d8f8df.js";const m='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"webfront/js/index.md"}',s={},n=a("p",null,"hello js",-1),r=[n];function c(_,d,i,l,p,f){return o(),t("div",null,r)}var u=e(s,[["render",c]]);export{m as __pageData,u as default};

@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a,a as o}from"./app.28d8f8df.js";const m='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"framework/vue/index.md"}',r={},s=o("p",null,"hello vue",-1),n=[s];function c(_,d,i,l,p,f){return a(),t("div",null,n)}var h=e(r,[["render",c]]);export{m as __pageData,h as default};
