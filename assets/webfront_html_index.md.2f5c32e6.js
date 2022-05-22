@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a,a as o}from"./app.40d2e1a4.js";const m='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"webfront/html/index.md","lastUpdated":1653188599000}',s={},n=o("p",null,"hell html",-1),r=[n];function c(d,l,_,i,p,f){return a(),t("div",null,r)}var u=e(s,[["render",c]]);export{m as __pageData,u as default};
