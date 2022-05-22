@@ -1,7 +1,7 @@
 module.exports = {
     title: 'Hello notes',
     description: 'Just playing aroung',
-    base: '/', //
+    // base: '/', //
     // base: '/notes/',
     // search: false, // 禁用默认的搜索框
     markdown: {
@@ -20,6 +20,13 @@ module.exports = {
     },
     themeConfig: {
         lastUpdated: true,
+        algolia: {
+            apiKey: '',
+            indexName: '',
+            searchParameters: {
+                feaFilters: ['tags:guide,api']
+            }
+          },
         // 导航
         nav: [
             {
