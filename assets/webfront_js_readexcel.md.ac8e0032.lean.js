@@ -1,0 +1,1 @@
+import{_ as n,c as s,o as a,b as t}from"./app.edcb0ac8.js";const f='{"title":"js\u8BFB\u53D6excel\u6587\u4EF6","description":"","frontmatter":{},"headers":[],"relativePath":"webfront/js/readexcel.md"}',p={},o=t("",2),e=[o];function c(l,k,u,r,i,d){return a(),s("div",null,e)}var w=n(p,[["render",c]]);export{f as __pageData,w as default};
