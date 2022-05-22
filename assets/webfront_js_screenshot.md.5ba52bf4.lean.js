@@ -1,0 +1,1 @@
+import{_ as a,c as n,o as s,b as t}from"./app.f6f1e4ac.js";const _='{"title":"\u622A\u56FE","description":"","frontmatter":{},"headers":[],"relativePath":"webfront/js/screenshot.md","lastUpdated":1653188599000}',e={},o=t("",6),p=[o];function c(l,r,i,u,d,k){return s(),n("div",null,p)}var m=a(e,[["render",c]]);export{_ as __pageData,m as default};
