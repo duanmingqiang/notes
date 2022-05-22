@@ -60,15 +60,15 @@ module.exports = {
                     },
                 ]
             },
-            {
-                text: '框架学习',
-                items: [
-                    {
-                        text: 'vue',
-                        link: '/framework/vue/'
-                    }
-                ]
-            }
+            // {
+            //     text: '框架学习',
+            //     items: [
+            //         {
+            //             text: 'vue',
+            //             link: '/framework/vue/'
+            //         }
+            //     ]
+            // }
         ],
         // 侧边栏
         sidebar: {
@@ -158,13 +158,13 @@ module.exports = {
                     link: '/webfront/js/readexcel'
                 },
             ],
-            '/framework/vue/': [
-                {
-                    text: 'home',
-                    link: '/framework/vue/'
-                },
-                // ['vue3', 'vue3知识点']
-            ],
+            // '/framework/vue/': [
+            //     {
+            //         text: 'home',
+            //         link: '/framework/vue/'
+            //     },
+            //     // ['vue3', 'vue3知识点']
+            // ],
             '/interview/': [
                 {
                     text: 'home',
