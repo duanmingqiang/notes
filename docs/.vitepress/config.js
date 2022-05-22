@@ -21,13 +21,13 @@ module.exports = {
     // },
     themeConfig: {
         
-        algolia: {
-            apiKey: '',
-            indexName: '',
-            searchParameters: {
-                feaFilters: ['tags:guide,api']
-            }
-          },
+        // algolia: {
+        //     apiKey: '',
+        //     indexName: '',
+        //     searchParameters: {
+        //         feaFilters: ['tags:guide,api']
+        //     }
+        //   },
         // 导航
         nav: [
             {
