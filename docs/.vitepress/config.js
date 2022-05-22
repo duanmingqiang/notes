@@ -1,25 +1,26 @@
 module.exports = {
     title: 'Hello notes',
     description: 'Just playing aroung',
-    // base: '/', //
+    base: '', //
     // base: '/notes/',
     // search: false, // 禁用默认的搜索框
-    markdown: {
-        // markdown-ite-anchor的选项
-        anchor: {
-            permalink: false
-        },
-        // markdown-it-toc
-        toc: {
-            includeLevel: [1, 2]
-        },
-        extendMarkdown: md => {
-            // 使用更多的markdown-it 插件！
-            // md.use(require('mark-ite-xxx'))
-        }
-    },
+    lastUpdated: "上次更新时间",
+    // markdown: {
+    //     // markdown-ite-anchor的选项
+    //     anchor: {
+    //         permalink: false
+    //     },
+    //     // markdown-it-toc
+    //     toc: {
+    //         includeLevel: [1, 2]
+    //     },
+    //     extendMarkdown: md => {
+    //         // 使用更多的markdown-it 插件！
+    //         // md.use(require('mark-ite-xxx'))
+    //     }
+    // },
     themeConfig: {
-        lastUpdated: true,
+        
         algolia: {
             apiKey: '',
             indexName: '',
