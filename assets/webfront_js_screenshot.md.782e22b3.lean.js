@@ -1,1 +1,0 @@
-import{_ as n,c as a,o as s,b as t}from"./app.edcb0ac8.js";const m='{"title":"\u622A\u56FE","description":"","frontmatter":{},"headers":[],"relativePath":"webfront/js/screenshot.md"}',e={},p=t("",6),o=[p];function c(l,i,u,r,k,d){return s(),a("div",null,o)}var h=n(e,[["render",c]]);export{m as __pageData,h as default};

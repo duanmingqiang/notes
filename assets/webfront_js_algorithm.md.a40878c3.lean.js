@@ -1,1 +1,0 @@
-import{_ as n,c as s,o as a,b as p}from"./app.edcb0ac8.js";const h='{"title":"\u6392\u5E8F","description":"","frontmatter":{},"headers":[{"level":3,"title":"\u6392\u5E8F","slug":"\u6392\u5E8F"}],"relativePath":"webfront/js/algorithm.md"}',t={},o=p("",7),e=[o];function c(u,l,r,k,i,d){return a(),s("div",null,e)}var _=n(t,[["render",c]]);export{h as __pageData,_ as default};
