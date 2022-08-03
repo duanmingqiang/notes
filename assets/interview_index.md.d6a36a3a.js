@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a,a as o}from"./app.6e8c2256.js";const u='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"interview/index.md","lastUpdated":1653188599000}',s={},n=o("p",null,"\u5F85\u5B8C\u5584",-1),r=[n];function c(d,i,_,p,l,f){return a(),t("div",null,r)}var h=e(s,[["render",c]]);export{u as __pageData,h as default};
