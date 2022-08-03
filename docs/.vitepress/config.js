@@ -115,6 +115,10 @@ module.exports = {
                     text: 'axios简单使用',
                     link: '/tool/axios'
                 },
+                {
+                    text: 'vuecli添加生产环境打印版本信息',
+                    link: '/tool/addversion'
+                }
             ],
             '/webfront/html/': [
                 {
