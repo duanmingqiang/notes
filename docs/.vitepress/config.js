@@ -94,6 +94,10 @@ module.exports = {
                     link: '/random/summaryfor2020'
                 },
                 {
+                    text: '2022年总结',
+                    link: '/random/summaryfor2022'
+                },
+                {
                     text: 'ssh秘钥',
                     link: '/random/ssh-key'
                 },
