@@ -1,0 +1,1 @@
+import{_ as a,c as e,o as r,b as t}from"./app.0b243bd4.js";const m='{"title":"\u56DE\u987E","description":"","frontmatter":{},"headers":[],"relativePath":"random/summaryfor2020.md","lastUpdated":1677071539000}',d={},s=t("",9),o=[s];function _(n,c,h,i,p,f){return r(),e("div",null,o)}var u=a(d,[["render",_]]);export{m as __pageData,u as default};

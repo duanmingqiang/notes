@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a,a as o}from"./app.42fd6a2f.js";const u='{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"random/index.md","lastUpdated":1653188599000}',s={},n=o("p",null,"\u968F\u4FBF\u5199\u5199^o^",-1),r=[n];function c(d,_,i,p,l,f){return a(),t("div",null,r)}var h=e(s,[["render",c]]);export{u as __pageData,h as default};
