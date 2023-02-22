@@ -1,0 +1,23 @@
+name: Build and Deploy
+on: # 此CI/ID触发时的事件
+  push: #在代码提交时自动触发
+    branches:
+      - main
+# permissions:
+#   contents: write
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install and Build
+        run: |
+          yarn install
+          yarn docs:build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: docs/.vitepress/dist # The folder the action should deploy.
